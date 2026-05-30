@@ -1,0 +1,78 @@
+/* ============================================================
+   PsyAI — Extended Work page (Client Work + AI Agent Suite)
+   Builds on styles.css design tokens.
+   ============================================================ */
+
+/* dark-glass nav for the sub-page (sits over a dark hero) */
+.work-page .nav { background: rgba(11, 11, 16, 0.55); backdrop-filter: saturate(160%) blur(18px); border-bottom: 1px solid var(--line-light); }
+.work-page .nav.scrolled { background: rgba(11, 11, 16, 0.8); }
+.work-page .brand { color: var(--on-dark); }
+
+/* ============ HERO ============ */
+.work-hero { position: relative; padding: 168px 0 clamp(80px, 11vw, 150px); overflow: hidden; }
+.work-hero__inner { position: relative; z-index: 2; max-width: 60ch; }
+.work-hero h1 {
+  font-family: "Instrument Serif", "Noto Serif SC", Georgia, serif; font-weight: 400;
+  font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.04; letter-spacing: -0.015em;
+  color: var(--on-dark); margin-bottom: 26px;
+}
+.work-hero h1 em { font-style: italic; background: var(--spectrum); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.work-hero__sub { font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--on-dark-dim); line-height: 1.65; max-width: 56ch; }
+.work-back { display: inline-flex; align-items: center; gap: 8px; margin-top: 34px; font-size: 14.5px; font-weight: 600; color: var(--on-dark); transition: gap 0.3s var(--ease), color 0.25s; }
+.work-back:hover { color: var(--rose); gap: 12px; }
+
+/* ============ CLIENT WORK — alternating case rows ============ */
+.cases { display: flex; flex-direction: column; gap: clamp(44px, 6vw, 86px); margin-top: clamp(48px, 6vw, 72px); }
+.case { display: grid; grid-template-columns: 1.12fr 1fr; gap: clamp(32px, 5vw, 60px); align-items: center; }
+.case--reverse .case__body { order: -1; }
+
+.case__media {
+  border-radius: var(--r); overflow: hidden; border: 1px solid var(--line);
+  background: #fff; box-shadow: 0 34px 80px -46px rgba(0, 0, 0, 0.32);
+}
+.case__media img { display: block; width: 100%; height: auto; }
+
+.case__index { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--magenta); margin-bottom: 14px; }
+.case__title { font-family: "Instrument Serif", "Noto Serif SC", Georgia, serif; font-weight: 400; font-size: clamp(1.55rem, 2.6vw, 2.15rem); line-height: 1.16; color: var(--text); margin-bottom: 22px; }
+.case__points { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.case__points li { font-size: 1rem; color: var(--text-dim); line-height: 1.55; }
+.case__points b { color: var(--text); font-weight: 600; }
+.case .tags { margin: 0 0 22px; }
+.case__result {
+  padding: 15px 20px; border-radius: var(--r-sm);
+  background: var(--cream-2); border: 1px solid var(--line);
+  font-size: 0.94rem; color: var(--text-dim); line-height: 1.5;
+}
+.case__result b { color: var(--text); font-weight: 600; }
+.case__result .case__result-tag { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px; }
+
+/* ============ AI AGENT SUITE ============ */
+.agents { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(22px, 3vw, 34px); margin-top: clamp(48px, 6vw, 64px); }
+.agent {
+  display: flex; flex-direction: column; margin: 0; border-radius: var(--r); overflow: hidden;
+  border: 1px solid var(--line-light); background: rgba(255, 255, 255, 0.03);
+  transition: transform 0.45s var(--ease), border-color 0.4s, background 0.4s;
+}
+.agent:hover { transform: translateY(-5px); border-color: rgba(255, 255, 255, 0.22); background: rgba(255, 255, 255, 0.05); }
+.agent__img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--line-light); }
+.agent figcaption { padding: 22px 26px 26px; }
+.agent h3 { font-size: 1.2rem; font-weight: 600; color: var(--on-dark); margin-bottom: 8px; }
+.agent p { font-size: 0.95rem; color: var(--on-dark-dim); line-height: 1.6; }
+
+/* ============ PAGE CTA ============ */
+.work-cta { text-align: center; }
+.work-cta__inner { display: flex; flex-direction: column; align-items: center; }
+.work-cta p { font-size: 1.12rem; color: var(--text-dim); max-width: 52ch; margin: 22px 0 34px; line-height: 1.6; }
+.work-cta__btns { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 860px) {
+  .case { grid-template-columns: 1fr; gap: 26px; }
+  .case--reverse .case__body { order: 0; }
+  .case__media { order: -1; }
+  .agents { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .work-cta__btns { width: 100%; }
+  .work-cta__btns .btn { width: 100%; }
+}
