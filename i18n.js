@@ -156,7 +156,11 @@
       "cred.fudan": "复旦大学",
       "cred.ucas": "中国科学院大学",
       "cred.tencent": "腾讯",
+      "cred.alibaba": "阿里巴巴",
       "cred.bytedance": "字节跳动",
+      "cred.huawei": "华为",
+      "cred.moonshot": "月之暗面",
+      "cred.yi": "零一万物",
       "cred.unitree": "宇树科技",
 
       // contact
@@ -364,7 +368,11 @@
       "cred.fudan": "復旦大學",
       "cred.ucas": "中國科學院大學",
       "cred.tencent": "騰訊",
+      "cred.alibaba": "阿里巴巴",
       "cred.bytedance": "字節跳動",
+      "cred.huawei": "華為",
+      "cred.moonshot": "月之暗面",
+      "cred.yi": "零一萬物",
       "cred.unitree": "宇樹科技",
 
       "contact.title": "讓我們一起，重塑連結。",
