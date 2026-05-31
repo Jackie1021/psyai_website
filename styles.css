@@ -133,6 +133,51 @@ a { color: inherit; text-decoration: none; }
 .mobile-menu a { font-family: "Instrument Serif", serif; font-size: 2rem; color: var(--text); }
 .mobile-menu__cta { margin-top: 16px; font-family: "Inter", sans-serif !important; font-size: 1rem !important; padding: 13px 30px; border-radius: var(--r-pill); background: var(--text); color: var(--cream) !important; }
 
+/* ============ LANGUAGE SWITCHER ============ */
+.lang { position: relative; }
+.lang__btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1;
+  color: var(--text-dim); cursor: pointer;
+  background: transparent; border: 1px solid var(--line);
+  border-radius: var(--r-pill); padding: 9px 13px;
+  transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+.lang__btn:hover { color: var(--text); border-color: var(--text); }
+.lang__globe { opacity: 0.9; }
+.lang__cur { min-width: 1.6em; text-align: center; letter-spacing: 0.01em; }
+.lang__chev { opacity: 0.65; transition: transform 0.3s var(--ease); }
+.lang.open .lang__chev { transform: rotate(180deg); }
+.lang__menu {
+  list-style: none; position: absolute; top: calc(100% + 10px); right: 0;
+  min-width: 158px; margin: 0; padding: 6px;
+  background: var(--cream); border: 1px solid var(--line); border-radius: 14px;
+  box-shadow: 0 24px 56px -26px rgba(0, 0, 0, 0.45);
+  display: flex; flex-direction: column; gap: 2px;
+  opacity: 0; visibility: hidden; transform: translateY(-8px);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+  z-index: 130;
+}
+.lang.open .lang__menu { opacity: 1; visibility: visible; transform: none; }
+.lang__menu button {
+  width: 100%; text-align: left; font-family: inherit; font-size: 14.5px; font-weight: 500;
+  color: var(--text); background: transparent; border: 0; cursor: pointer;
+  padding: 10px 12px; border-radius: 9px;
+  transition: background 0.2s, color 0.2s;
+}
+.lang__menu button:hover { background: rgba(108, 92, 231, 0.09); color: var(--violet); }
+.lang__menu button.active { color: var(--violet); font-weight: 700; }
+
+/* nav sits over the dark hero before scroll → use light text there */
+.nav:not(.scrolled) .brand { color: var(--on-dark); }
+.nav:not(.scrolled) .nav__links a { color: var(--on-dark-dim); }
+.nav:not(.scrolled) .nav__links a:hover { color: var(--on-dark); }
+.nav:not(.scrolled) .lang__btn { color: var(--on-dark); border-color: var(--line-light); }
+.nav:not(.scrolled) .lang__btn:hover { color: #fff; border-color: var(--on-dark); }
+.nav:not(.scrolled) .btn--ghost { color: var(--on-dark); border-color: var(--line-light); }
+.nav:not(.scrolled) .btn--ghost:hover { background: var(--on-dark); color: var(--ink); }
+.nav:not(.scrolled) .nav__burger span { background: var(--on-dark); }
+
 /* ============ HERO ============ */
 .hero {
   position: relative; min-height: 100vh; display: flex; align-items: center;
